@@ -6,8 +6,7 @@
 
 ### 使用
 ```
-  $ cnpm install
-  $ cnpm install webpack -g
+  $ cnpm install 或者 yarn install
   $ npm start
   $ open http://localhost:8001/
 ```
