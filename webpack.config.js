@@ -6,8 +6,7 @@ var path =require('path');
 module.exports = {
     watch:true,
     entry: {
-        example:"./example/example.js",
-        test:['babel-polyfill',"./test.js"]
+        example:"./example/example.js"
     },
     output: {
         publicPath:'/dist/',
