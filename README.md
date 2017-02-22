@@ -8,6 +8,10 @@
 ```
   $ cnpm install
   $ cnpm install webpack -g
-  $ npm start 
+  $ npm start
   $ open http://localhost:8001/
 ```
+
+## 示例
+
+![demo](./example/demo.png)

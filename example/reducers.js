@@ -1,52 +1,20 @@
 /**
  * Created by slashhuang on 16/3/8.
+ * 简化demo 17/2/21
  */
 
 import { combineReducers } from 'redux';
-import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from './actions';
-const { SHOW_ALL } = VisibilityFilters;
-
-function visibilityFilter(state = SHOW_ALL, action) {
+function reducer(state={"hello":"world"}, action) {
     switch (action.type) {
-        case SET_VISIBILITY_FILTER:
-            return action.filter;
+        case 'action1':
+            return Object.assign({},state,action);
+        case 'action2':
+            return Object.assign({},state,action);
         default:
             return state;
     }
 }
-function thunk(state, action) {
-    switch (action.type) {
-        case 'thunk':
-            return action.text;
-        default:
-            return {};
-    }
-}
-
-function todos(state = [], action) {
-    switch (action.type) {
-        case ADD_TODO:
-            return [...state, {
-                text: action.text,
-                completed: false
-            }];
-        case COMPLETE_TODO:
-            return [
-                ...state.slice(0, action.index),
-                Object.assign({}, state[action.index], {
-                    completed: true
-                }),
-                ...state.slice(action.index + 1)
-            ];
-        default:
-            return state;
-    }
-}
-
 const todoApp = combineReducers({
-    visibilityFilter,
-    todos,
-    thunk
+    reducer
 });
-
 export default todoApp;
